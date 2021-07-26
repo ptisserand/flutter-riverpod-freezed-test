@@ -8,13 +8,10 @@ part 'jokes_state_notifier.dart';
 // Dependency injection
 
 // Logic / StateNotifier
-final jokesNotifierProvider = StateNotifierProvider<JokesNotifier, JokesState>(
-  (ref) => JokesNotifier(
-    jokesRepository: ref.watch(_jokesRepositoryProvider),
-  )
-);
+final jokesNotifierProvider =
+    StateNotifierProvider<JokesNotifier, JokesState>((ref) => JokesNotifier(
+          jokesRepository: ref.watch(_jokesRepositoryProvider),
+        ));
 
-final _jokesRepositoryProvider = Provider<IJokesRepository>(
-  (ref) => JokesRepository();
-);
-
+final _jokesRepositoryProvider =
+    Provider<IJokesRepository>((ref) => JokesRepository());
